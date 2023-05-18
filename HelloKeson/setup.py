@@ -16,7 +16,7 @@ NAME = 'hellokeson'
 DESCRIPTION = 'Hello,Keson.'
 URL = 'https://github.com/KesonStar/PythonTest'
 EMAIL = '1183213982@qq.com'
-AUTHOR = 'KeonStar'
+AUTHOR = 'KesonStar'
 REQUIRES_PYTHON = '>=3.6.0'
 VERSION = '0.1.0'
 
@@ -74,18 +74,18 @@ class UploadCommand(Command):
 
     def run(self):
         try:
-            self.status('Removing previous builds¡­')
+            self.status('Removing previous buildsâ€¦')
             rmtree(os.path.join(here, 'dist'))
         except OSError:
             pass
 
-        self.status('Building Source and Wheel (universal) distribution¡­')
+        self.status('Building Source and Wheel (universal) distributionâ€¦')
         os.system('{0} setup.py sdist bdist_wheel --universal'.format(sys.executable))
 
-        self.status('Uploading the package to PyPI via Twine¡­')
+        self.status('Uploading the package to PyPI via Twineâ€¦')
         os.system('twine upload dist/*')
 
-        self.status('Pushing git tags¡­')
+        self.status('Pushing git tagsâ€¦')
         os.system('git tag v{0}'.format(about['__version__']))
         os.system('git push --tags')
 
@@ -103,7 +103,7 @@ setup(
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
     url=URL,
-    packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"]),
+    #packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"]),
     # If your package is a single module, use this instead of 'packages':
     py_modules=['hellokeson'],
 
